@@ -282,3 +282,521 @@ h2, h3, p { overflow-wrap: break-word; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
 }
+
+/* Duc Dung editorial travel direction */
+:root {
+  color: #17263b;
+  background: #f7f4ec;
+  --green: #ef5a2a;
+  --green-dark: #cf431b;
+  --green-light: #fff0e7;
+  --ink: #17263b;
+  --muted: #687384;
+  --line: #dedbd2;
+  --surface: #fffdf8;
+  --page: #f7f4ec;
+  --shadow: 0 18px 45px rgba(23, 38, 59, .1);
+  --navy: #17263b;
+  --orange: #ef5a2a;
+  --cream: #f7f4ec;
+}
+
+body { background: var(--cream); color: var(--ink); }
+button, a { -webkit-tap-highlight-color: transparent; }
+a:focus-visible, button:focus-visible, summary:focus-visible {
+  outline: 3px solid #f8a348;
+  outline-offset: 4px;
+}
+.skip-link { color: var(--navy); }
+
+.site-header {
+  background: var(--cream);
+  box-shadow: 0 1px 0 rgba(23, 38, 59, .12);
+}
+.header-inner { min-height: 80px; }
+.brand img { width: 154px; }
+.desktop-nav { gap: clamp(15px, 1.8vw, 27px); }
+.desktop-nav a {
+  color: #465166;
+  font-size: 12px;
+  font-weight: 700;
+}
+.desktop-nav a:hover, .footer-column a:hover { color: var(--orange); }
+.header-call {
+  border-radius: 4px;
+  padding: 12px 15px;
+  background: var(--orange);
+  color: white;
+  font-size: 11px;
+}
+.header-call strong { color: white; }
+
+.hero {
+  min-height: 665px;
+  display: block;
+  overflow: hidden;
+  background: var(--navy);
+  color: white;
+}
+.hero-inner {
+  width: min(1240px, calc(100% - 48px));
+  min-height: 610px;
+  display: grid;
+  grid-template-columns: .92fr 1.08fr;
+  align-items: center;
+  gap: clamp(34px, 6vw, 84px);
+  padding: 66px 0 58px;
+}
+.hero-copy {
+  width: auto;
+  max-width: 570px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: white;
+  backdrop-filter: none;
+}
+.hero-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: #c4ccda;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .15em;
+}
+.hero-kicker .pulse-dot {
+  background: #f58b52;
+  box-shadow: 0 0 0 4px rgba(245, 139, 82, .16);
+}
+.hero h1 {
+  margin: 32px 0 20px;
+  color: white;
+  font-family: "Barlow Condensed", "Be Vietnam Pro", sans-serif;
+  font-size: clamp(76px, 8.5vw, 118px);
+  font-weight: 800;
+  line-height: .82;
+  letter-spacing: -.035em;
+}
+.hero h1 span { color: #ff7140; }
+.hero-route {
+  margin: 29px 0 13px;
+  color: #f7a768;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .12em;
+}
+.hero-route span { padding: 0 7px; color: #fff; }
+.hero-description {
+  max-width: 470px;
+  margin: 0;
+  color: #d0d6df;
+  font-size: 14px;
+  line-height: 1.85;
+}
+.hero-actions { gap: 12px; margin-top: 28px; }
+.button {
+  min-height: 49px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 800;
+  transition: transform .2s, background-color .2s, border-color .2s;
+}
+.button:hover { transform: translateY(-2px); box-shadow: none; }
+.button-primary { background: var(--orange); color: white; }
+.button-primary:hover { background: #ff7140; }
+.button-outline { border: 1px solid rgba(255,255,255,.38); color: white; }
+.button-outline:hover { border-color: white; background: rgba(255,255,255,.08); }
+.hero-actions .button { flex: 0 1 auto; padding-right: 18px; padding-left: 18px; }
+.hero-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  margin-top: 39px;
+  border-top: 1px solid rgba(255,255,255,.2);
+}
+.hero-trust > span {
+  display: grid;
+  gap: 4px;
+  min-width: 31%;
+  padding: 15px 14px 0 0;
+  color: #b9c2d0;
+  font-size: 10px;
+}
+.hero-trust strong { color: white; font-size: 15px; }
+.hero-visual {
+  position: relative;
+  align-self: stretch;
+  min-height: 470px;
+  background: #455b6f url("assets/car-banner.webp") center / cover no-repeat;
+  clip-path: polygon(9% 0, 100% 0, 100% 100%, 0 100%, 0 13%);
+}
+.hero-visual::before {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(23,38,59,.02) 38%, rgba(23,38,59,.7));
+  content: "";
+}
+.hero-image-label {
+  position: absolute;
+  top: 19px;
+  right: 19px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: var(--cream);
+  color: var(--navy);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: .08em;
+}
+.hero-image-label span { color: var(--orange); }
+.hero-ticket {
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  left: 18px;
+  display: grid;
+  gap: 10px;
+  padding: 23px 25px 20px;
+  background: var(--cream);
+  color: var(--navy);
+}
+.ticket-kicker { color: #657187; font-size: 9px; font-weight: 800; letter-spacing: .14em; }
+.hero-ticket > strong {
+  font-family: "Barlow Condensed", "Be Vietnam Pro", sans-serif;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1;
+}
+.hero-ticket > strong span { color: var(--orange); }
+.ticket-divider { height: 1px; background: #d9d4c9; }
+.hero-ticket > span:last-of-type { color: #5d6878; font-size: 11px; }
+.hero-ticket > a {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 9px;
+  border-top: 1px solid #d9d4c9;
+  color: var(--orange);
+  font-size: 11px;
+  font-weight: 800;
+}
+.hero-bottomline {
+  min-height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 max(24px, calc((100vw - 1240px) / 2));
+  border-top: 1px solid rgba(255,255,255,.16);
+  color: #aeb9c7;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .13em;
+}
+
+.section { padding: 96px 0; }
+.container { width: min(1160px, calc(100% - 48px)); }
+.intro-section, .pricing-section { background: var(--cream); }
+.services-section, .fleet-section, .faq-section { background: #fffdf8; }
+.eyebrow {
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  color: var(--orange);
+  font-size: 10px;
+  letter-spacing: .15em;
+}
+.intro-copy h2, .section-heading h2 {
+  margin: 14px 0 16px;
+  color: var(--navy);
+  font-family: "Barlow Condensed", "Be Vietnam Pro", sans-serif;
+  font-size: clamp(39px, 4.2vw, 58px);
+  font-weight: 700;
+  line-height: .98;
+  letter-spacing: -.015em;
+  text-transform: uppercase;
+}
+.intro-copy p { color: #5b6676; font-size: 13px; }
+.intro-copy .lead { color: var(--navy); font-size: 15px; }
+.intro-copy strong { color: var(--navy); }
+.intro-points {
+  border-left-color: var(--orange);
+  border-radius: 0;
+  background: #eee9dd;
+}
+.intro-points p > span:first-child { color: var(--orange); }
+.intro-image {
+  min-height: 450px;
+  border-radius: 0;
+  box-shadow: none;
+}
+.image-caption {
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border: 0;
+  border-radius: 0;
+  background: var(--cream);
+}
+.image-caption > span:first-child { color: var(--orange); }
+
+.section-heading { max-width: 770px; margin-bottom: 46px; }
+.section-heading h2 { margin-top: 14px; }
+.section-heading p { color: #707888; font-size: 13px; }
+.service-grid { gap: 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.service-card {
+  min-height: 350px;
+  padding: 30px 27px 25px;
+  border: 0;
+  border-right: 1px solid var(--line);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.service-card:last-child { border-right: 0; }
+.service-card.featured-card {
+  border: 0;
+  border-right: 1px solid var(--line);
+  background: #f1ede3;
+  box-shadow: none;
+}
+.service-icon {
+  width: auto;
+  height: auto;
+  display: block;
+  margin-bottom: 31px;
+  border-radius: 0;
+  background: transparent;
+  color: var(--orange);
+  font-family: "Barlow Condensed", "Be Vietnam Pro", sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: .1em;
+}
+.popular-tag { top: 27px; right: 25px; border-radius: 0; background: var(--orange); font-size: 8px; }
+.service-card h3 { color: var(--navy); font-size: 18px; }
+.service-card > p { color: #626d7c; font-size: 12px; }
+.service-price { padding: 18px 0; }
+.service-price strong { color: var(--orange); font-family: "Barlow Condensed", sans-serif; font-size: 36px; }
+.text-action {
+  border-top-color: var(--line);
+  color: var(--orange);
+  font-size: 11px;
+}
+.text-action:hover { color: var(--navy); }
+
+.why-section { background: var(--navy); color: white; }
+.why-section .section-heading h2 { color: white; }
+.why-section .section-heading p { color: #b8c2d0; }
+.benefit-grid { gap: 0; border-top: 1px solid rgba(255,255,255,.2); border-bottom: 1px solid rgba(255,255,255,.2); }
+.benefit-card {
+  padding: 25px 22px 24px;
+  border: 0;
+  border-right: 1px solid rgba(255,255,255,.2);
+  border-radius: 0;
+  background: transparent;
+}
+.benefit-card:last-child { border-right: 0; }
+.benefit-icon {
+  width: auto;
+  height: auto;
+  display: block;
+  margin-bottom: 29px;
+  border-radius: 0;
+  background: transparent;
+  color: #ff8252;
+  font-family: "Barlow Condensed", sans-serif;
+  font-size: 15px;
+  font-weight: 800;
+}
+.benefit-card h3 { color: white; font-size: 14px; }
+.benefit-card p { color: #b8c2d0; font-size: 11px; }
+.stats-row {
+  border: 0;
+  border-radius: 0;
+  background: #21334a;
+}
+.stats-row strong { color: #ff8252; font-family: "Barlow Condensed", sans-serif; font-size: 33px; }
+.stats-row span { color: #c2cad5; }
+
+.fleet-showcase {
+  gap: 48px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+.fleet-photo { min-height: 430px; border-radius: 0; background: #e8e2d6; }
+.fleet-label { left: 0; bottom: 0; border-radius: 0; background: var(--orange); color: white; }
+.fleet-details { padding-right: 8px; }
+.fleet-details h3 {
+  color: var(--navy);
+  font-family: "Barlow Condensed", "Be Vietnam Pro", sans-serif;
+  font-size: 34px;
+  text-transform: uppercase;
+}
+.fleet-details > p, .fleet-details li { color: #626d7c; }
+.fleet-details ul { gap: 13px; }
+.fleet-details li::before { color: var(--orange); }
+.fleet-dot.active { background: var(--orange); }
+
+.price-table-wrap {
+  border: 1px solid #dcd7ca;
+  border-radius: 0;
+  background: #fffdf8;
+  box-shadow: none;
+}
+.price-table caption { color: var(--navy); text-align: left; }
+.price-table th { background: var(--navy); color: white; }
+.price-table td { border-top-color: #e9e5dc; color: #4f5a6a; }
+.price-table tbody tr:nth-child(even) { background: #f2eee5; }
+.price-table td:nth-child(n+3) { color: var(--orange); }
+.price-notes p { color: #596475; }
+.price-notes p span { border-radius: 0; background: #fbe4d6; color: var(--orange); }
+.price-cta { border-radius: 0; background: var(--navy); }
+.price-cta strong { color: white; }
+.price-cta span { color: #c1c9d4; }
+.price-cta .button-outline { border-color: rgba(255,255,255,.5); }
+
+.faq-container { max-width: 890px; }
+.faq-item {
+  border: 0;
+  border-top: 1px solid #dcd7ca;
+  border-radius: 0;
+  background: transparent;
+}
+.faq-item:last-child { border-bottom: 1px solid #dcd7ca; }
+.faq-item[open] { border-color: #dcd7ca; box-shadow: none; }
+.faq-item summary { color: var(--navy); }
+.faq-item summary::after { color: var(--orange); }
+.faq-item p { color: #626d7c; }
+
+.site-footer { background: #111e30; }
+.footer-brand img { border-radius: 0; }
+.footer-about > p a { color: #ff8252; }
+.area-tags a { border-radius: 0; }
+.area-tags a:hover { border-color: var(--orange); }
+.footer-bottom { border-top-color: rgba(255,255,255,.16); }
+.floating-actions { right: 22px; bottom: 20px; }
+.floating-actions > * { border-radius: 4px; box-shadow: 0 8px 24px rgba(14,24,39,.28); }
+.float-call { background: var(--orange); }
+.float-zalo { background: #087fc0; }
+
+.zalo-dialog { border-radius: 8px; }
+.dialog-heading { background: var(--navy); }
+.dialog-close { border-radius: 3px; }
+.dialog-actions .button-primary { background: #087fc0; }
+.or-label { color: #687384; }
+
+@media (max-width: 1000px) {
+  .hero-inner { gap: 32px; }
+  .hero h1 { font-size: clamp(70px, 8vw, 92px); }
+  .desktop-nav { gap: 11px; }
+  .desktop-nav a { font-size: 10px; }
+  .header-call { padding: 10px; }
+  .service-card { padding-right: 19px; padding-left: 19px; }
+  .benefit-card { padding-right: 16px; padding-left: 16px; }
+}
+
+@media (max-width: 760px) {
+  html { scroll-padding-top: 70px; }
+  .header-inner { min-height: 70px; }
+  .brand img { width: 126px; height: 49px; }
+  .menu-toggle span { background: var(--navy); }
+  .mobile-nav { background: var(--cream); }
+  .mobile-nav a { border-bottom-color: #e5e0d5; color: var(--navy); }
+  .mobile-nav .mobile-call { border-radius: 3px; background: var(--orange); }
+  .hero { min-height: auto; }
+  .hero-inner {
+    width: calc(100% - 40px);
+    min-height: 0;
+    grid-template-columns: 1fr;
+    gap: 34px;
+    padding: 54px 0 31px;
+  }
+  .hero-copy { max-width: none; }
+  .hero h1 { margin: 27px 0 18px; font-size: clamp(76px, 17vw, 112px); text-align: left; }
+  .hero-route { margin-top: 24px; }
+  .hero-description { font-size: 13px; text-align: left; }
+  .hero-actions { display: flex; flex-wrap: wrap; margin-top: 23px; }
+  .hero-actions .button { min-height: 49px; flex: 1 1 170px; }
+  .hero-trust { margin-top: 29px; }
+  .hero-trust > span { min-width: 33.33%; padding-right: 6px; font-size: 9px; }
+  .hero-trust strong { font-size: 14px; }
+  .hero-visual { min-height: 380px; clip-path: polygon(7% 0, 100% 0, 100% 100%, 0 100%, 0 10%); }
+  .hero-ticket { right: 12px; bottom: 12px; left: 12px; padding: 18px; }
+  .hero-ticket > strong { font-size: 30px; }
+  .hero-bottomline { min-height: 48px; padding: 0 20px; font-size: 8px; }
+  .hero-bottomline span:last-child { text-align: right; }
+  .section { padding: 68px 0; }
+  .container { width: calc(100% - 40px); }
+  .intro-grid { grid-template-columns: 1fr; gap: 27px; }
+  .intro-copy h2, .section-heading h2 { font-size: 42px; }
+  .intro-image { min-height: 300px; }
+  .section-heading { margin-bottom: 30px; }
+  .service-grid { grid-template-columns: 1fr; }
+  .service-card, .service-card.featured-card {
+    min-height: 0;
+    padding: 24px 4px 22px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+    background: transparent;
+  }
+  .service-card:last-child { border-bottom: 0; }
+  .service-icon { margin-bottom: 17px; }
+  .popular-tag { top: 22px; right: 4px; }
+  .service-price { padding: 13px 0; }
+  .benefit-grid { grid-template-columns: 1fr 1fr; }
+  .benefit-card { padding: 20px 13px; border-bottom: 1px solid rgba(255,255,255,.2); }
+  .benefit-card:nth-child(2) { border-right: 0; }
+  .benefit-card:nth-last-child(-n+2) { border-bottom: 0; }
+  .benefit-icon { margin-bottom: 19px; }
+  .stats-row { gap: 6px; padding: 20px 5px; }
+  .stats-row strong { font-size: 25px; }
+  .stats-row span { font-size: 9px; }
+  .fleet-showcase { grid-template-columns: 1fr; gap: 18px; }
+  .fleet-photo { min-height: 285px; }
+  .fleet-details { padding: 10px 2px 5px; }
+  .fleet-details h3 { font-size: 29px; }
+  .price-table-wrap { margin-right: -20px; margin-left: -20px; border-right: 0; border-left: 0; }
+  .price-table { min-width: 700px; }
+  .price-table th, .price-table td { padding: 12px 10px; }
+  .price-notes { grid-template-columns: 1fr; gap: 12px; }
+  .price-cta { align-items: flex-start; flex-direction: column; padding: 20px; }
+  .faq-item summary { min-height: 58px; padding: 14px 4px; }
+  .faq-item p { padding: 0 4px 17px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 27px; padding-top: 43px; padding-bottom: 32px; }
+  .footer-bottom .container { align-items: flex-start; flex-direction: column; padding-top: 14px; padding-bottom: 14px; }
+  .floating-actions { right: 12px; bottom: 12px; left: 12px; gap: 9px; }
+  .floating-actions > * { min-width: 0; min-height: 49px; flex: 1; border-radius: 4px; font-size: 11px; }
+  body { padding-bottom: 65px; }
+  .dialog-content { grid-template-columns: 1fr; gap: 18px; padding: 20px; }
+  .qr-wrap img { width: 165px; height: 165px; }
+  .dialog-heading { padding: 22px 18px; }
+  .dialog-heading h2 { font-size: 19px; }
+}
+
+@media (max-width: 380px) {
+  .hero-inner { width: calc(100% - 32px); }
+  .hero h1 { font-size: 74px; }
+  .hero-kicker { font-size: 8px; letter-spacing: .1em; }
+  .hero-route { font-size: 9px; letter-spacing: .08em; }
+  .hero-trust > span { font-size: 8px; }
+  .container { width: calc(100% - 34px); }
+  .hero-bottomline { padding-right: 16px; padding-left: 16px; font-size: 7px; letter-spacing: .08em; }
+  .benefit-grid { grid-template-columns: 1fr; }
+  .benefit-card, .benefit-card:nth-child(2), .benefit-card:nth-last-child(-n+2) {
+    border-right: 0;
+    border-bottom: 1px solid rgba(255,255,255,.2);
+  }
+  .benefit-card:last-child { border-bottom: 0; }
+  .price-table-wrap { margin-right: -17px; margin-left: -17px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
+}
