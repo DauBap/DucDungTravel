@@ -2,7 +2,7 @@
 
 ## Tóm tắt
 
-Đã rà soát mã nguồn website tĩnh và kiểm tra bản đang công khai tại `https://ducdungtravel.vercel.app/`. Không phát hiện lỗi JavaScript khi kiểm tra các tương tác chính. Có hai vấn đề nội dung quan trọng chưa thể tự sửa an toàn: số điện thoại gọi khác với số hiển thị, và giá giữa các phần trên trang không thống nhất.
+Đã rà soát mã nguồn website tĩnh và kiểm tra bản production tại `https://ducdungtravel.vercel.app/` ở thời điểm kiểm toán. Sau đó tên miền canonical được cập nhật thành `https://xeghepthaibinhhanoi.vercel.app/` trong metadata, sitemap và robots.txt. Không phát hiện lỗi JavaScript khi kiểm tra các tương tác chính. Có hai vấn đề nội dung quan trọng chưa thể tự sửa an toàn: số điện thoại gọi khác với số hiển thị, và giá giữa các phần trên trang không thống nhất.
 
 Các sửa đổi kỹ thuật đã thực hiện ở local gồm bổ sung metadata SEO/chia sẻ, `robots.txt`, `sitemap.xml`, tối ưu ảnh và loại bỏ một số hình ảnh/thông tin quảng cáo cũ hoặc khẳng định chưa có căn cứ. **Các thay đổi chưa được deploy, commit hoặc push.**
 

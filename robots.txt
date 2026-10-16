@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ducdungtravel.vercel.app/sitemap.xml
+Sitemap: https://xeghepthaibinhhanoi.vercel.app/sitemap.xml
